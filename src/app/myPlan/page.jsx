@@ -56,9 +56,9 @@ const MyPlanPage = () => {
           <div>
             <select defaultValue="Pick a color" className="select rounded-xl">
               <option disabled={true}>Sort By</option>
-              <option>Crimson</option>
-              <option>Amber</option>
-              <option>Velvet</option>
+              <option>Duration</option>
+              <option>Calories</option>
+              <option>Rating</option>
             </select>
           </div>
         </div>

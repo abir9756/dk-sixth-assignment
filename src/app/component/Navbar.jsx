@@ -1,12 +1,15 @@
 'use client'
-import React from "react";
+import React, { useContext } from "react";
 
 import Logo from "@/app/asset/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FitContext } from "@/context/FitContext";
+import { TbCircleNumber0 } from "react-icons/tb";
 const Navbar = () => {
-
+      const {todaysPlan,saved} = useContext(FitContext)
+    
     const pathname = usePathname()
 
     const link= <>
@@ -17,8 +20,9 @@ const Navbar = () => {
     
     </>
     const buttonLink = <>
-           <Link href={'/myPlan'} className="btn bg-black border-none shadow-none">Plan</Link>
-          <Link  href={'/myPlan'} className="btn bg-black border-none shadow-none">Saved</Link>
+    {/* <div className="badge badge-primary badge-sm"></div> */}
+           <Link href={'/myPlan'} className="btn bg-black border-none shadow-none">Plan<div className="badge bg-[#C2F800] badge-xs font-bold text-xs text-black">{todaysPlan.length}</div> </Link>
+          <Link  href={'/myPlan'} className="btn bg-black border-none shadow-none">Saved <div className="badge  badge-xs font-bold text-xs bg-black border border-[#2D313B] text-[#D1D5DB]">{saved.length}</div></Link>
     </>
 
 
