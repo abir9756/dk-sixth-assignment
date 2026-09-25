@@ -55,7 +55,7 @@ const MyPlanPage = () => {
           <h2 className="text-[#8A92A0]">Sort By</h2>
           <div>
             <select defaultValue="Pick a color" className="select rounded-xl">
-              <option disabled={true}>Duration</option>
+              <option disabled={true}>Sort By</option>
               <option>Crimson</option>
               <option>Amber</option>
               <option>Velvet</option>

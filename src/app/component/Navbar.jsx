@@ -16,6 +16,10 @@ const Navbar = () => {
    
     
     </>
+    const buttonLink = <>
+           <Link href={'/myPlan'} className="btn bg-black border-none shadow-none">Plan</Link>
+          <Link  href={'/myPlan'} className="btn bg-black border-none shadow-none">Saved</Link>
+    </>
 
 
   return (
@@ -60,8 +64,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-           <a className="btn bg-black border-none shadow-none">Plan</a>
-           <a className="btn bg-black border-none shadow-none">Saved</a>
+    {buttonLink}
             
       </div>
     </div>

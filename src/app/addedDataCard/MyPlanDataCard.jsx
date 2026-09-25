@@ -1,3 +1,4 @@
+'use client'
 import { FitContext } from "@/context/FitContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +9,12 @@ import { PiFireSimpleFill } from "react-icons/pi";
 import { VscChromeClose } from "react-icons/vsc";
 
 const MyPlanDataCard = () => {
-  const { todaysPlan } = useContext(FitContext);
+  const { todaysPlan,setTodaysPlan } = useContext(FitContext);
 
+  // const removePlan = (plan) =>{
+  //   const deletePlan = todaysPlan.filter(p=>p.id!==plan.id)
+  //   setTodaysPlan(deletePlan)
+  // }
 
   return (
     <div>
@@ -62,6 +67,7 @@ const MyPlanDataCard = () => {
 
                   </Link>
                   <button className="btn  bg-[#CCFF00] text-black rounded-3xl">Mark as Done</button>
+                  {/* <VscChromeClose onClick={()=>removePlan(plan)} /> */}
                   <VscChromeClose />
                 </div>
               
