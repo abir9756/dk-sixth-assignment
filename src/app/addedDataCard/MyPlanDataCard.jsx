@@ -16,7 +16,7 @@ const MyPlanDataCard = ({plan}) => {
   const removePlan = (plan) =>{
     const deletePlan = todaysPlan.filter(p=>p.id!==plan.id)
     setTodaysPlan(deletePlan)
-    toast.warning("Removed exercise")
+    toast.warning("Removed from Plan")
   }
   const handleMark=()=>{
     toast.success("Marked")
@@ -25,14 +25,13 @@ const MyPlanDataCard = ({plan}) => {
   return (
 
     <div>
-      {/* {todaysPlan.map((plan) => { */}
-        {/* return ( */}
+   
           <div
-            // key={plan.id}
+            
             className="card lg:card-side shadow-sm flex items-center justify-between mb-4 p-4 bg-[#13161D] "
           >
            
-              <div  className="flex ">
+              <div  className="md:flex ">
                 {/* image */}
                 <figure className="rounded-xl">
                   <Image
@@ -40,11 +39,12 @@ const MyPlanDataCard = ({plan}) => {
                     alt="lifting image"
                     width={100}
                     height={200}
+                    className="w-full "
                   ></Image>
                 </figure>
                 {/* detail */}
                 <div className="card-body">
-                  <h2 className="card-title font-bold text-2xl">{plan.name}</h2>
+                  <h2 className="card-title  font-bold text-2xl">{plan.name}</h2>
                   <p className="font-semibold text-[#8A92A0]">
                     {plan.equipment}
                   </p>
@@ -77,7 +77,7 @@ const MyPlanDataCard = ({plan}) => {
                   onClick={handleMark}
                   className="btn  bg-[#CCFF00] text-black rounded-3xl"><FaCheck /> Mark as Done</button>
                   <VscChromeClose onClick={()=>removePlan(plan)} />
-                  {/* <VscChromeClose /> */}
+                 
                 </div>
               
           

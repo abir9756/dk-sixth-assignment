@@ -18,8 +18,8 @@ const LibraryDetailPage = async ({ params }) => {
         <figure className="w-full lg:w-1/2 rounded-2xl">
         <Image src={data.image} alt="image" width={800} height={500}></Image>
         </figure>
-        <div className="card-body">
-          <h2 className="card-title font-bold text-5xl">{data.name}</h2>
+        <div className="card-body text-center md:text-start ">
+          <h2 className="card-title font-bold justify-center md:justify-start text-5xl">{data.name}</h2>
           <p className="text-[#9CA3AF] text-2xl pb-5">{data.description}</p>
             <div className="pb-7">
             {

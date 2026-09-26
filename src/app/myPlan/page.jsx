@@ -50,7 +50,7 @@ const MyPlanPage = () => {
   );
 
   return (
-    <div className="py-10 px-12">
+    <div className="py-10 px-12 text-center md:text-start">
       <div>
         <h1 className="font-bold text-4xl">MY PLAN</h1>
         <p className="text-[#8A92A0] text-2xl">
@@ -64,11 +64,11 @@ const MyPlanPage = () => {
             <h4 className="text-[#8A92A0]">Exercises</h4>
             <h1 className="text-[#CCFF00] font-bold text-4xl">{todaysPlan.length}</h1>
           </div>
-          <div className=" border-l border-l-[#2D313B] px-8">
+          <div className=" border-l border-l-[#2D313B] px-3 md:px-8">
             <h4 className="text-[#8A92A0]">Minutes</h4>
             <h2 className="font-bold text-4xl">{TotalMinutes}</h2>
           </div>
-          <div className=" border-l border-l-[#2D313B] px-8">
+          <div className=" border-l border-l-[#2D313B] px-3 md:px-8">
             <h4 className="text-[#8A92A0]">Calories</h4>
             <h2 className="font-bold text-4xl">{TotalCalories}</h2>
           </div>
@@ -79,22 +79,22 @@ const MyPlanPage = () => {
             <h4 className="text-[#8A92A0]">Exercises</h4>
             <h1 className="text-[#CCFF00] font-bold text-4xl">{saved.length}</h1>
           </div>
-          <div className=" border-l border-l-[#2D313B] px-8">
+          <div className=" border-l border-l-[#2D313B] px-3 md:px-8">
             <h4 className="text-[#8A92A0]">Minutes</h4>
             <h2 className="font-bold text-4xl">{totalMinutes}</h2>
           </div>
-          <div className=" border-l border-l-[#2D313B] px-8">
+          <div className=" border-l border-l-[#2D313B] px-3 md:px-8">
             <h4 className="text-[#8A92A0]">Calories</h4>
             <h2 className="font-bold text-4xl">{totalCalories}</h2>
           </div>
         </div>
-      ) : (
+      ) : 
         ""
-      )}
+      }
 
-      <div className="flex justify-between mb-6">
+      <div className="md:flex justify-between mb-6">
         {/* name of each tab group should be unique */}
-        <div className="tabs tabs-box rounded-xl">
+        <div className="tabs tabs-box  rounded-xl">
           <input
             type="radio"
             name="my_tabs_1"
@@ -112,7 +112,7 @@ const MyPlanPage = () => {
             onChange={() => setActiveTab("Saved")}
           />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="md:flex items-center gap-2">
           <h2 className="text-[#8A92A0]">Sort By</h2>
           <div>
             <select

@@ -15,7 +15,7 @@ const SavedDataCard = ({plan}) => {
         const removePlan = (plan) =>{
           const deletePlan = saved.filter(p=>p.id!==plan.id)
           setSaved(deletePlan)
-          toast.warning("Removed exercise")
+          toast.warning("Removed from Plan")
         }
   return (
     <div>
@@ -24,7 +24,7 @@ const SavedDataCard = ({plan}) => {
            
             className="card lg:card-side shadow-sm flex items-center justify-between mb-4 p-4 bg-[#13161D] "
           >
-            <div className="flex ">
+            <div className="md:flex ">
               {/* image */}
               <figure className="rounded-xl">
                 <Image
@@ -32,10 +32,11 @@ const SavedDataCard = ({plan}) => {
                   alt="lifting image"
                   width={100}
                   height={200}
+                    className="w-full "
                 ></Image>
               </figure>
               {/* detail */}
-              <div className="card-body">
+              <div className="card-body ">
                 <h2 className="card-title font-bold text-2xl">{plan.name}</h2>
                 <p className="font-semibold text-[#8A92A0]">{plan.equipment}</p>
                 <div className="flex gap-4 pt-1.5">

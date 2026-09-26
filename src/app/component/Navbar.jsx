@@ -54,6 +54,16 @@ const Navbar = () => {
       </Link>
     </>
   );
+  const logoLink = (
+    <>
+      <Link href={"/"}>
+        <div className="flex items-center gap-2 font-bold text-2xl ">
+          <Image src={Logo} alt="Logo"></Image>
+          <h2>FITLOG</h2>
+        </div>
+      </Link>
+    </>
+  );
 
   return (
     <nav className=" bg-black shadow-sm border-b mb-12 border-b-[#2D313B]">
@@ -85,10 +95,8 @@ const Navbar = () => {
               {link}
             </ul>
           </div>
-          <div className="flex items-center gap-2 font-bold text-2xl ">
-            <Image src={Logo} alt="Logo"></Image>
-            <h2>FITLOG</h2>
-          </div>
+
+          {logoLink}
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{link}</ul>
