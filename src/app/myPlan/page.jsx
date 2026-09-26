@@ -40,9 +40,12 @@ const MyPlanPage = () => {
           Cap of five lifts for today. Finish them, then load more.
         </p>
       </div>
+
+
       <div className="px-6  pt-8 pb-6 my-6 flex justify-between bg-[#13161D] rounded-2xl">
         <div>
           <h4>Exercises</h4>
+          <h1>{todaysPlan.length}</h1>
         </div>
         <div>
           <h4>Minutes</h4>
@@ -51,6 +54,16 @@ const MyPlanPage = () => {
           <h4>Calories</h4>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
       <div className="flex justify-between mb-6">
         {/* name of each tab group should be unique */}
         <div className="tabs tabs-box rounded-xl">
@@ -88,7 +101,7 @@ const MyPlanPage = () => {
       </div>
 
       <div>
-        {}
+        
 
         {activeTab === "Today's Plan" ? (
           sortedTodaysPlan.length > 0 ? (

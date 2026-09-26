@@ -6,16 +6,22 @@ import { IoMdStarOutline } from "react-icons/io";
 import { LuClock } from "react-icons/lu";
 import { PiFireSimpleFill } from "react-icons/pi";
 import { VscChromeClose } from "react-icons/vsc";
+import { toast } from "react-toastify";
 
 const SavedDataCard = ({plan}) => {
-      const {saved } = useContext(FitContext);
-
+      const {saved,setSaved } = useContext(FitContext);
+       
+      
+        const removePlan = (plan) =>{
+          const deletePlan = saved.filter(p=>p.id!==plan.id)
+          setSaved(deletePlan)
+          toast.warning("Removed exercise")
+        }
   return (
     <div>
-      {/* {saved.map((plan) => {
-        return ( */}
+  
           <div
-            // key={plan.id}
+           
             className="card lg:card-side shadow-sm flex items-center justify-between mb-4 p-4 bg-[#13161D] "
           >
             <div className="flex ">
@@ -56,7 +62,7 @@ const SavedDataCard = ({plan}) => {
                   View Details
                 </button>
               </Link>
-              <VscChromeClose />
+              <VscChromeClose onClick={()=>removePlan(plan)}/>
             </div>
           </div>
         {/* );

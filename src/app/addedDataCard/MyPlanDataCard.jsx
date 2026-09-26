@@ -13,10 +13,11 @@ import { toast } from "react-toastify";
 const MyPlanDataCard = ({plan}) => {
   const { todaysPlan,setTodaysPlan } = useContext(FitContext);
 
-  // const removePlan = (plan) =>{
-  //   const deletePlan = todaysPlan.filter(p=>p.id!==plan.id)
-  //   setTodaysPlan(deletePlan)
-  // }
+  const removePlan = (plan) =>{
+    const deletePlan = todaysPlan.filter(p=>p.id!==plan.id)
+    setTodaysPlan(deletePlan)
+    toast.warning("Removed exercise")
+  }
   const handleMark=()=>{
     toast.success("Marked")
   }
@@ -75,8 +76,8 @@ const MyPlanDataCard = ({plan}) => {
                   <button 
                   onClick={handleMark}
                   className="btn  bg-[#CCFF00] text-black rounded-3xl"><FaCheck /> Mark as Done</button>
-                  {/* <VscChromeClose onClick={()=>removePlan(plan)} /> */}
-                  <VscChromeClose />
+                  <VscChromeClose onClick={()=>removePlan(plan)} />
+                  {/* <VscChromeClose /> */}
                 </div>
               
           
