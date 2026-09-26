@@ -11,12 +11,18 @@ const MyPlanButton = ({data}) => {
     
 
       const handlePlanButton = () =>{
-        //   if(Added){
-        //     toast.error("Already Added")
-        //     return
+          if(Added){
+            toast.error("Already Added")
+            return
+        }
+        // if(todaysPlan){
+        //   toast.error("Already Added")
+        //   return
         // }
+
      setTodaysPlan([...todaysPlan,data])
         setAdded(!Added)
+        // setTodaysPlan(!todaysPlan)
         toast.success("Added to today's plan")
 
       
@@ -25,7 +31,7 @@ const MyPlanButton = ({data}) => {
         <div>
              <button
              onClick={()=>handlePlanButton()}
-             disabled={Added}
+            //  disabled={Added}
               className="btn bg-[#CCFF00] text-black rounded-xl"><BiSolidAddToQueue /> Add to today's plan</button>
         </div>
     );
