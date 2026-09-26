@@ -4,6 +4,9 @@
 @theme{
     --font-oswald:"Oswald",sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 :root {
   --background: #ffffff;

@@ -29,9 +29,7 @@ const MyPlanPage = () => {
   const sortedTodaysPlan = sortPlan(todaysPlan);
   const sortedSaved = sortPlan(saved);
 
-
-
-    const TotalMinutes = todaysPlan.reduce(
+  const TotalMinutes = todaysPlan.reduce(
     (total, plan) => total + plan.duration,
     0,
   );
@@ -40,10 +38,7 @@ const MyPlanPage = () => {
     0,
   );
 
-      const totalMinutes = saved.reduce(
-    (total, plan) => total + plan.duration,
-    0,
-  );
+  const totalMinutes = saved.reduce((total, plan) => total + plan.duration, 0);
   const totalCalories = saved.reduce(
     (total, plan) => total + plan.caloriesBurned,
     0,
@@ -60,9 +55,11 @@ const MyPlanPage = () => {
 
       {activeTab === "Today's Plan" ? (
         <div className="px-6  pt-8 pb-6 my-6 flex justify-between bg-[#13161D] rounded-2xl">
-          <div >
+          <div>
             <h4 className="text-[#8A92A0]">Exercises</h4>
-            <h1 className="text-[#CCFF00] font-bold text-4xl">{todaysPlan.length}</h1>
+            <h1 className="text-[#CCFF00] font-bold text-4xl">
+              {todaysPlan.length}
+            </h1>
           </div>
           <div className=" border-l border-l-[#2D313B] px-3 md:px-8">
             <h4 className="text-[#8A92A0]">Minutes</h4>
@@ -74,10 +71,12 @@ const MyPlanPage = () => {
           </div>
         </div>
       ) : activeTab === "Saved" ? (
-           <div className="px-6  pt-8 pb-6 my-6 flex justify-between bg-[#13161D] rounded-2xl">
+        <div className="px-6  pt-8 pb-6 my-6 flex justify-between bg-[#13161D] rounded-2xl">
           <div>
             <h4 className="text-[#8A92A0]">Exercises</h4>
-            <h1 className="text-[#CCFF00] font-bold text-4xl">{saved.length}</h1>
+            <h1 className="text-[#CCFF00] font-bold text-4xl">
+              {saved.length}
+            </h1>
           </div>
           <div className=" border-l border-l-[#2D313B] px-3 md:px-8">
             <h4 className="text-[#8A92A0]">Minutes</h4>
@@ -88,9 +87,9 @@ const MyPlanPage = () => {
             <h2 className="font-bold text-4xl">{totalCalories}</h2>
           </div>
         </div>
-      ) : 
+      ) : (
         ""
-      }
+      )}
 
       <div className="md:flex justify-between mb-6">
         {/* name of each tab group should be unique */}

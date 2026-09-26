@@ -6,10 +6,10 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="bg-[#090A0D] mt-16">
-        <div className="divider"></div>
+      <div className="divider"></div>
       <div className="container mx-auto md:flex md:justify-between text-center py-10">
         <div className="flex justify-center gap-3">
-          <Image src={Logo} alt="Logo" ></Image>
+          <Image src={Logo} alt="Logo"></Image>
           <h2 className="font-bold text-xl">FITLOG</h2>
         </div>
         <Link href={""}>
