@@ -7,15 +7,15 @@ import { LuClock } from "react-icons/lu";
 import { PiFireSimpleFill } from "react-icons/pi";
 import { VscChromeClose } from "react-icons/vsc";
 
-const SavedDataCard = () => {
+const SavedDataCard = ({plan}) => {
       const {saved } = useContext(FitContext);
 
   return (
     <div>
-      {saved.map((plan) => {
-        return (
+      {/* {saved.map((plan) => {
+        return ( */}
           <div
-            key={plan.id}
+            // key={plan.id}
             className="card lg:card-side shadow-sm flex items-center justify-between mb-4 p-4 bg-[#13161D] "
           >
             <div className="flex ">
@@ -59,8 +59,8 @@ const SavedDataCard = () => {
               <VscChromeClose />
             </div>
           </div>
-        );
-      })}
+        {/* );
+      })} */}
     </div>
   );
 };

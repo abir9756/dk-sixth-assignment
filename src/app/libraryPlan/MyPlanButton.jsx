@@ -3,6 +3,7 @@
 import { FitContext } from '@/context/FitContext';
 import React, { useContext, useState } from 'react';
 import { BiSolidAddToQueue } from 'react-icons/bi';
+import { toast } from 'react-toastify';
 
 const MyPlanButton = ({data}) => {
       const {todaysPlan,setTodaysPlan} = useContext(FitContext)
@@ -16,6 +17,7 @@ const MyPlanButton = ({data}) => {
         // }
      setTodaysPlan([...todaysPlan,data])
         setAdded(!Added)
+        toast.success("Added to today's plan")
 
       
       }

@@ -11,6 +11,7 @@ import Link from "next/link";
 const MyPlanPage = () => {
   const { todaysPlan, saved } = useContext(FitContext);
   const [activeTab, setActiveTab] = useState("Today's Plan");
+  const [sortBy,setSortBy] = useState("Duration")
 
   return (
     <div className="py-10 px-12">
@@ -69,8 +70,9 @@ const MyPlanPage = () => {
 
         {activeTab === "Today's Plan" ? (
           todaysPlan.length > 0 ? (
-            <MyPlanDataCard></MyPlanDataCard>
-          ) : (
+            todaysPlan.map((plan) => (
+            <MyPlanDataCard key={plan.id} plan={plan}></MyPlanDataCard>)
+          )) : (
             <div className="border border-dashed border-[#A1A1AA] rounded-xl text-center px-4 py-24 ">
               <div>
                 <h1 className="pb-2 font-bold text-2xl">NOTHING HERE YET</h1>
@@ -87,7 +89,8 @@ const MyPlanPage = () => {
           )
         ) : activeTab === "Saved" ? (
           saved.length > 0 ? (
-            <SavedDataCard></SavedDataCard>
+            saved.map((plan) => (
+            <SavedDataCard key={plan.id} plan={plan}></SavedDataCard>))
           ) : (
             <div className="border border-dashed border-[#A1A1AA] rounded-xl text-center px-4 py-24 ">
               <div>

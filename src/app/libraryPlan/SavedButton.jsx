@@ -3,6 +3,7 @@
 import { FitContext } from '@/context/FitContext';
 import React, { useContext } from 'react';
 import { MdBookmarkBorder } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const SavedButton = ({data}) => {
      const {saved,setSaved }= useContext(FitContext)
@@ -10,6 +11,8 @@ const SavedButton = ({data}) => {
      const handleSavedButton = () =>{
         console.log('s trigerd')
         setSaved([...saved,data])
+        toast.success("Saved")
+        
      }
     return (
         <div>

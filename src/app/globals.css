@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme{
+    --font-oswald:"Oswald",sans-serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

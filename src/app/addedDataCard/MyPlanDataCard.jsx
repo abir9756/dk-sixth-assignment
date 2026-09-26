@@ -3,12 +3,13 @@ import { FitContext } from "@/context/FitContext";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
+import { FaCheck } from "react-icons/fa";
 import { IoMdStarOutline } from "react-icons/io";
 import { LuClock } from "react-icons/lu";
 import { PiFireSimpleFill } from "react-icons/pi";
 import { VscChromeClose } from "react-icons/vsc";
 
-const MyPlanDataCard = () => {
+const MyPlanDataCard = ({plan}) => {
   const { todaysPlan,setTodaysPlan } = useContext(FitContext);
 
   // const removePlan = (plan) =>{
@@ -17,11 +18,12 @@ const MyPlanDataCard = () => {
   // }
 
   return (
+
     <div>
-      {todaysPlan.map((plan) => {
-        return (
+      {/* {todaysPlan.map((plan) => { */}
+        {/* return ( */}
           <div
-            key={plan.id}
+            // key={plan.id}
             className="card lg:card-side shadow-sm flex items-center justify-between mb-4 p-4 bg-[#13161D] "
           >
            
@@ -66,15 +68,15 @@ const MyPlanDataCard = () => {
                   <button className="btn rounded-3xl text-xs">View Details</button>
 
                   </Link>
-                  <button className="btn  bg-[#CCFF00] text-black rounded-3xl">Mark as Done</button>
+                  <button className="btn  bg-[#CCFF00] text-black rounded-3xl"><FaCheck /> Mark as Done</button>
                   {/* <VscChromeClose onClick={()=>removePlan(plan)} /> */}
                   <VscChromeClose />
                 </div>
               
           
           </div>
-        );
-      })}
+        {/* ); */}
+      {/* })} */}
     </div>
   );
 };

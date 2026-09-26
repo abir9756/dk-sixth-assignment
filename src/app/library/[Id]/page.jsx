@@ -19,7 +19,7 @@ const LibraryDetailPage = async ({ params }) => {
         <Image src={data.image} alt="image" width={800} height={500}></Image>
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{data.name}</h2>
+          <h2 className="card-title font-bold text-5xl">{data.name}</h2>
           <p className="text-[#9CA3AF] text-2xl pb-5">{data.description}</p>
             <div className="pb-7">
             {
