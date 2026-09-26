@@ -18,7 +18,7 @@ const SavedButton = ({data}) => {
         <div>
             <button
             onClick={()=>handleSavedButton()}
-            className="btn text-[#E5E7EB] rounded-xl"><MdBookmarkBorder /> Save for later</button>
+            className="btn text-[#E5E7EB] border border-[#374151] bg-black rounded-xl"><MdBookmarkBorder /> Save for later</button>
         </div>
     );
 };

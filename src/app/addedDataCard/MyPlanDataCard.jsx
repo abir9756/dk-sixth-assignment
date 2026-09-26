@@ -8,6 +8,7 @@ import { IoMdStarOutline } from "react-icons/io";
 import { LuClock } from "react-icons/lu";
 import { PiFireSimpleFill } from "react-icons/pi";
 import { VscChromeClose } from "react-icons/vsc";
+import { toast } from "react-toastify";
 
 const MyPlanDataCard = ({plan}) => {
   const { todaysPlan,setTodaysPlan } = useContext(FitContext);
@@ -16,6 +17,9 @@ const MyPlanDataCard = ({plan}) => {
   //   const deletePlan = todaysPlan.filter(p=>p.id!==plan.id)
   //   setTodaysPlan(deletePlan)
   // }
+  const handleMark=()=>{
+    toast.success("Marked")
+  }
 
   return (
 
@@ -68,7 +72,9 @@ const MyPlanDataCard = ({plan}) => {
                   <button className="btn rounded-3xl text-xs">View Details</button>
 
                   </Link>
-                  <button className="btn  bg-[#CCFF00] text-black rounded-3xl"><FaCheck /> Mark as Done</button>
+                  <button 
+                  onClick={handleMark}
+                  className="btn  bg-[#CCFF00] text-black rounded-3xl"><FaCheck /> Mark as Done</button>
                   {/* <VscChromeClose onClick={()=>removePlan(plan)} /> */}
                   <VscChromeClose />
                 </div>

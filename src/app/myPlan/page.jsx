@@ -13,6 +13,25 @@ const MyPlanPage = () => {
   const [activeTab, setActiveTab] = useState("Today's Plan");
   const [sortBy,setSortBy] = useState("Duration")
 
+  const sortPlan = (plan) =>{
+    return[...plan].sort((a,b)=>{
+      if(sortBy==="Duration"){
+        return b.duration - a.duration
+      }
+      if(sortBy==="Calories"){
+        return b.caloriesBurned - a.caloriesBurned
+      }
+      if(sortBy==="Rating"){
+        return b.rating - a.rating
+      }
+      return 0
+    })  
+  }
+
+    const sortedTodaysPlan = sortPlan(todaysPlan);
+    const sortedSaved = sortPlan(saved);
+
+
   return (
     <div className="py-10 px-12">
       <div>
@@ -55,11 +74,14 @@ const MyPlanPage = () => {
         <div className="flex items-center gap-2">
           <h2 className="text-[#8A92A0]">Sort By</h2>
           <div>
-            <select defaultValue="Pick a color" className="select rounded-xl">
-              <option disabled={true}>Sort By</option>
-              <option>Duration</option>
-              <option>Calories</option>
-              <option>Rating</option>
+            <select
+            value={sortBy}
+            onChange={(e)=>setSortBy(e.target.value)}
+            // defaultValue="Pick a color" 
+            className="select rounded-xl">
+              <option value="Duration">Duration</option>
+              <option value="Calories">Calories</option>
+              <option value="Rating">Rating</option>
             </select>
           </div>
         </div>
@@ -69,8 +91,8 @@ const MyPlanPage = () => {
         {}
 
         {activeTab === "Today's Plan" ? (
-          todaysPlan.length > 0 ? (
-            todaysPlan.map((plan) => (
+          sortedTodaysPlan.length > 0 ? (
+            sortedTodaysPlan.map((plan) => (
             <MyPlanDataCard key={plan.id} plan={plan}></MyPlanDataCard>)
           )) : (
             <div className="border border-dashed border-[#A1A1AA] rounded-xl text-center px-4 py-24 ">
@@ -88,8 +110,8 @@ const MyPlanPage = () => {
             </div>
           )
         ) : activeTab === "Saved" ? (
-          saved.length > 0 ? (
-            saved.map((plan) => (
+          sortedSaved.length > 0 ? (
+            sortedSaved.map((plan) => (
             <SavedDataCard key={plan.id} plan={plan}></SavedDataCard>))
           ) : (
             <div className="border border-dashed border-[#A1A1AA] rounded-xl text-center px-4 py-24 ">
